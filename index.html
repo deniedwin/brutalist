@@ -21,13 +21,10 @@
     h1, h2 {
       text-align: center;
     }
-    .step {
+    .box, .step {
       border: 3px solid #000;
       padding: 20px;
       margin-bottom: 20px;
-      min-height: 400px;           /* All boxes have the same minimum height */
-      display: flex;
-      flex-direction: column;
     }
     label {
       display: block;
@@ -36,7 +33,7 @@
     /* Fixed label width for alignment in Step 4 */
     .field-label {
       display: inline-block;
-      width: 80px;
+      width: 80px; /* Adjust width as needed for alignment */
     }
     button {
       margin: 10px 5px 0 0;
@@ -49,19 +46,13 @@
       color: #000;
       -webkit-appearance: none;
       appearance: none;
+      display: inline-block;
       box-sizing: border-box;
-    }
-    /* Container for action buttons; pushed to the bottom */
-    .button-container {
-      margin-top: auto;
-      text-align: right;
     }
     select, input {
       font-family: monospace;
       padding: 5px;
       margin: 5px 0;
-      width: 100%;
-      box-sizing: border-box;
     }
     .legal {
       text-align: center;
@@ -94,19 +85,15 @@
         <label>
           <input type="radio" name="currency" value="EUR"> EUR
         </label>
-        <div class="button-container">
-          <button type="button" onclick="nextStep(1)">Next</button>
-        </div>
+        <button type="button" onclick="nextStep(1)">Next</button>
       </div>
 
       <!-- Step 2: Date Selection -->
       <div class="step" id="step2" style="display:none;">
         <h2>Step 2: Select Date</h2>
         <select id="dateSelect" name="date" required></select>
-        <div class="button-container">
-          <button type="button" onclick="prevStep(2)">Back</button>
-          <button type="button" onclick="nextStep(2)">Next</button>
-        </div>
+        <button type="button" onclick="prevStep(2)">Back</button>
+        <button type="button" onclick="nextStep(2)">Next</button>
       </div>
 
       <!-- Step 3: Session Selection -->
@@ -118,10 +105,8 @@
         <label>
           <input type="radio" name="session" value="sunset" required> Sunset (3-6pm) – <span>AVBL: 12/12</span>
         </label>
-        <div class="button-container">
-          <button type="button" onclick="prevStep(3)">Back</button>
-          <button type="button" onclick="nextStep(3)">Next</button>
-        </div>
+        <button type="button" onclick="prevStep(3)">Back</button>
+        <button type="button" onclick="nextStep(3)">Next</button>
       </div>
 
       <!-- Step 4: Personal Details -->
@@ -130,20 +115,16 @@
         <label><span class="field-label">Name:</span><input type="text" name="name" required></label>
         <label><span class="field-label">Email:</span><input type="email" name="email" required></label>
         <label><span class="field-label">Phone:</span><input type="tel" name="phone" required></label>
-        <div class="button-container">
-          <button type="button" onclick="prevStep(4)">Back</button>
-          <button type="button" onclick="nextStep(4)">Next</button>
-        </div>
+        <button type="button" onclick="prevStep(4)">Back</button>
+        <button type="button" onclick="nextStep(4)">Next</button>
       </div>
 
       <!-- Step 5: Review & Checkout -->
       <div class="step" id="step5" style="display:none;">
         <h2>Step 5: Review & Pay</h2>
         <div id="reviewSection"></div>
-        <div class="button-container">
-          <button type="button" onclick="prevStep(5)">Back</button>
-          <button type="submit">Pay</button>
-        </div>
+        <button type="button" onclick="prevStep(5)">Back</button>
+        <button type="submit">Pay</button>
       </div>
     </form>
     <div class="legal">
