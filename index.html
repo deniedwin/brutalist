@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./script.js"></script>
   <title>Klif Booking</title>
   <style>
     /* Brutalist aesthetics: raw, minimal, and unpolished */
@@ -91,4 +92,33 @@
           <input type="radio" name="session" value="sunrise" required> Sunrise (6-10am) – <span>Available: 12/12</span>
         </label>
         <label>
-          <input type="radio" nam
+          <input type="radio" name="session" value="sunset" required> Sunset (3-6pm) – <span>Available: 12/12</span>
+        </label>
+        <button type="button" onclick="prevStep(3)">Back</button>
+        <button type="button" onclick="nextStep(3)">Next</button>
+      </div>
+
+      <!-- Step 4: Personal Details -->
+      <div class="step" id="step4" style="display:none;">
+        <h2>Step 4: Your Details</h2>
+        <label>Name: <input type="text" name="name" required></label>
+        <label>Email: <input type="email" name="email" required></label>
+        <label>Phone: <input type="tel" name="phone" required></label>
+        <button type="button" onclick="prevStep(4)">Back</button>
+        <button type="button" onclick="nextStep(4)">Next</button>
+      </div>
+
+      <!-- Step 5: Review & Checkout -->
+      <div class="step" id="step5" style="display:none;">
+        <h2>Step 5: Review & Pay</h2>
+        <div id="reviewSection"></div>
+        <button type="button" onclick="prevStep(5)">Back</button>
+        <button type="submit">Pay</button>
+      </div>
+    </form>
+    <div class="legal">
+      <p>Note: Klif Est OÜ only charges a commission to Klif Curacao BV. The operational company is Klif Curacao BV.</p>
+    </div>
+  </div>
+</body>
+</html>
