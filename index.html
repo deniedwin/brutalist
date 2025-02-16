@@ -36,7 +36,7 @@
       border: 2px solid #000;
       background: none;
       font-family: monospace;
-      font-weight: normal; /* Ensures consistent, non-bold text */
+      font-weight: normal; /* consistent, non-bold text */
       cursor: pointer;
       color: #000;
       -webkit-appearance: none;
@@ -46,6 +46,11 @@
       font-family: monospace;
       padding: 5px;
       margin: 5px 0;
+      color: #000;
+      width: 100%;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      appearance: none;
     }
     .legal {
       text-align: center;
@@ -64,7 +69,7 @@
       <div class="step" id="step1">
         <h2>Step 1: Choose Product & Currency</h2>
         <label>
-          <input type="radio" name="product" value="single" required> Rock Climbing Single
+          <input type="radio" name="product" value="single" required checked> Rock Climbing Single
         </label>
         <label>
           <input type="radio" name="product" value="group" required> Rock Climbing Group
@@ -93,10 +98,10 @@
       <div class="step" id="step3" style="display:none;">
         <h2>Step 3: Choose Session</h2>
         <label>
-          <input type="radio" name="session" value="sunrise" required> Sunrise (6-10am) – <span>Available: 12/12</span>
+          <input type="radio" name="session" value="sunrise" required> Sunrise (6-10am) – <span>AVBL 12/12</span>
         </label>
         <label>
-          <input type="radio" name="session" value="sunset" required> Sunset (3-6pm) – <span>Available: 12/12</span>
+          <input type="radio" name="session" value="sunset" required> Sunset (3-6pm) – <span>AVBL 12/12</span>
         </label>
         <button type="button" onclick="prevStep(3)">Back</button>
         <button type="button" onclick="nextStep(3)">Next</button>
