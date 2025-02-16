@@ -30,27 +30,29 @@
       display: block;
       margin: 10px 0;
     }
+    /* Fixed label width for alignment in Step 4 */
+    .field-label {
+      display: inline-block;
+      width: 80px; /* Adjust width as needed for alignment */
+    }
     button {
       margin: 10px 5px 0 0;
       padding: 10px 15px;
       border: 2px solid #000;
       background: none;
       font-family: monospace;
-      font-weight: normal; /* consistent, non-bold text */
+      font-weight: normal;
       cursor: pointer;
       color: #000;
       -webkit-appearance: none;
       appearance: none;
+      display: inline-block;
+      box-sizing: border-box;
     }
     select, input {
       font-family: monospace;
       padding: 5px;
       margin: 5px 0;
-      color: #000;
-      width: 100%;
-      box-sizing: border-box;
-      -webkit-appearance: none;
-      appearance: none;
     }
     .legal {
       text-align: center;
@@ -69,10 +71,10 @@
       <div class="step" id="step1">
         <h2>Step 1: Choose Product & Currency</h2>
         <label>
-          <input type="radio" name="product" value="single" required checked> Rock Climbing Single
+          <input type="radio" name="product" value="group" checked> Rock Climbing Group
         </label>
         <label>
-          <input type="radio" name="product" value="group" required> Rock Climbing Group
+          <input type="radio" name="product" value="single"> Rock Climbing Single
         </label>
         <div>
           <strong>Price:</strong> <span id="priceDisplay"></span>
@@ -98,10 +100,10 @@
       <div class="step" id="step3" style="display:none;">
         <h2>Step 3: Choose Session</h2>
         <label>
-          <input type="radio" name="session" value="sunrise" required> Sunrise (6-10am) – <span>AVBL 12/12</span>
+          <input type="radio" name="session" value="sunrise" required> Sunrise (6-9am) – <span>AVBL: 12/12</span>
         </label>
         <label>
-          <input type="radio" name="session" value="sunset" required> Sunset (3-6pm) – <span>AVBL 12/12</span>
+          <input type="radio" name="session" value="sunset" required> Sunset (3-6pm) – <span>AVBL: 12/12</span>
         </label>
         <button type="button" onclick="prevStep(3)">Back</button>
         <button type="button" onclick="nextStep(3)">Next</button>
@@ -110,9 +112,9 @@
       <!-- Step 4: Personal Details -->
       <div class="step" id="step4" style="display:none;">
         <h2>Step 4: Your Details</h2>
-        <label>Name: <input type="text" name="name" required></label>
-        <label>Email: <input type="email" name="email" required></label>
-        <label>Phone: <input type="tel" name="phone" required></label>
+        <label><span class="field-label">Name:</span><input type="text" name="name" required></label>
+        <label><span class="field-label">Email:</span><input type="email" name="email" required></label>
+        <label><span class="field-label">Phone:</span><input type="tel" name="phone" required></label>
         <button type="button" onclick="prevStep(4)">Back</button>
         <button type="button" onclick="nextStep(4)">Next</button>
       </div>
