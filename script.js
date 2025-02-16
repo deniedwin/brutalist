@@ -95,10 +95,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('reviewSection').innerHTML = reviewHTML;
   }
   
-  // Handle form submission by redirecting to Stripe.
+  // Handle form submission by simulating a Stripe payment.
   document.getElementById('bookingForm').addEventListener('submit', function(e){
     e.preventDefault();
-    // Replace the URL below with your actual Stripe Checkout session URL.
-    window.location.href = 'https://stripe.com/checkout';
+    // Replace form content with a processing message
+    const container = document.querySelector('.container');
+    container.innerHTML = '<h1>Processing Payment...</h1><p>You will be redirected shortly.</p>';
+    // Simulate a delay of 3 seconds then redirect to success.html.
+    setTimeout(function() {
+      window.location.href = 'success.html';
+    }, 3000);
   });
 });
